@@ -1,9 +1,9 @@
-============================================================
+
 📊 PROYECTO: CALCULADORA DE DISTRIBUCIONES ESTADÍSTICAS
               (Poisson + Hipergeométrica)
-============================================================
 
-Autor: [Tu nombre aquí]
+
+Autor: Cristopher Coaquira
 Tecnologías: Python, FastAPI, Matplotlib, Jinja2, Uvicorn
 Última actualización: Mayo 2025
 
@@ -133,7 +133,6 @@ poisson_fastapi/
 Proyecto de uso educativo y libre. 
 Puedes modificarlo, compartirlo y mejorarlo sin restricciones.
 
-============================================================
+
 ¡Gracias por usar esta herramienta! 
 Esperamos que te sea útil en tus estudios o proyectos.
-============================================================
