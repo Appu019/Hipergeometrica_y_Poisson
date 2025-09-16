@@ -1,0 +1,98 @@
+# ==============================
+# 🐍 PYTHON
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+pyvenv.cfg
+
+# ==============================
+# 🧪 JUPYTER / NOTEBOOKS
+# ==============================
+.ipynb_checkpoints
+*.ipynb
+
+# ==============================
+# 🗃️ ARCHIVOS TEMPORALES / DEL SISTEMA
+# ==============================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ==============================
+# 🧑‍💻 PYCHARM PROFESSIONAL (JetBrains)
+# ==============================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ==============================
+# 📦 ENTORNOS VIRTUALES (recomendado ignorarlos)
+# ==============================
+.venv/
+venv/
+env/
+
+# ==============================
+# 📁 ARCHIVOS DE DEPENDENCIAS (no ignorar requirements.txt)
+# ==============================
+# Pipfile.lock  ← descomenta si usas Pipenv
+# poetry.lock   ← descomenta si usas Poetry
+
+# ==============================
+# 🖼️ ARCHIVOS GENERADOS (como gráficos temporales en desarrollo)
+# ==============================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+# → NOTA: Si en producción generas gráficos base64 (en memoria), NO necesitas guardar imágenes.
+#    Solo descomenta esto si guardas gráficos en disco y no quieres versionarlos.
+
+# ==============================
+# 🔐 SECRETOS / CONFIGURACIONES SENSIBLES
+# ==============================
+.env
+*.key
+*.pem
+config.json
+secrets.json
+
+# ==============================
+# 📦 LOGS / CACHE / BUILD
+# ==============================
+*.log
+logs/
+.cache/
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ==============================
+# 🚫 OTROS (personalizables)
+# ==============================
+# Ejemplo: si usas bases de datos locales
+*.sqlite3
+*.db
+
+# Ejemplo: si usas Docker
+# .dockerignore
+# docker-compose.override.yml

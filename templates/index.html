@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Distribución de Poisson - FastAPI</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f7f9fc; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        input, button { padding: 10px; margin: 5px; font-size: 16px; }
+        button { background: #3498db; color: white; border: none; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        .result { margin-top: 20px; padding: 15px; background: #e8f4fc; border-left: 5px solid #3498db; }
+        img { max-width: 100%; margin-top: 20px; }
+        .api-link { text-align: center; margin-top: 30px; }
+        .api-link a { color: #8e44ad; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Calculadora de Distribución de Poisson (FastAPI)</h1>
+        <form method="POST">
+            <label>Valor de λ (tasa promedio): </label>
+            <input type="number" name="lam" step="0.1" value="{{ lam or 3 }}" required min="0.1"><br>
+            <label>Valor de x (eventos deseados): </label>
+            <input type="number" name="x" value="{{ x or 2 }}" required min="0"><br>
+            <button type="submit">Calcular P(X = x)</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>Resultado:</h3>
+            <p><strong>{{ result }}</strong></p>
+            <p><strong>Fórmula:</strong> {{ formula }}</p>
+        </div>
+        {% endif %}
+
+        {% if plot_url %}
+        <h3>Gráfico de la Distribución de Poisson (λ = {{ lam }})</h3>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Gráfico de Poisson">
+        {% endif %}
+
+        <div class="api-link">
+            <p>¿Eres desarrollador? Prueba nuestra API interactiva: <a href="/docs">/docs</a></p>
+        </div>
+    </div>
+</body>
+</html>

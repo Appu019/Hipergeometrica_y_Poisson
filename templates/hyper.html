@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Distribución Hipergeométrica - FastAPI</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #fef8f8; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        h1 { color: #c0392b; text-align: center; }
+        input, button { padding: 10px; margin: 5px; font-size: 16px; }
+        button { background: #e74c3c; color: white; border: none; cursor: pointer; }
+        button:hover { background: #c0392b; }
+        .result { margin-top: 20px; padding: 15px; background: #fdecea; border-left: 5px solid #e74c3c; }
+        img { max-width: 100%; margin-top: 20px; }
+        .nav { text-align: center; margin-bottom: 20px; }
+        .nav a { margin: 0 10px; color: #3498db; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">← Poisson</a> | <strong>Hipergeométrica</strong> | <a href="/docs">API Docs</a>
+        </div>
+
+        <h1>🎯 Calculadora de Distribución Hipergeométrica</h1>
+        <form method="POST">
+            <label>Población total (N): </label>
+            <input type="number" name="N" value="{{ N or 20 }}" required min="1"><br>
+            <label>Éxitos en población (K): </label>
+            <input type="number" name="K" value="{{ K or 5 }}" required min="0"><br>
+            <label>Tamaño de muestra (n): </label>
+            <input type="number" name="n" value="{{ n or 4 }}" required min="1"><br>
+            <label>Éxitos deseados en muestra (x): </label>
+            <input type="number" name="x" value="{{ x or 2 }}" required min="0"><br>
+            <button type="submit">Calcular P(X = x)</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>Resultado:</h3>
+            <p><strong>{{ result }}</strong></p>
+            <p><strong>Fórmula:</strong> {{ formula }}</p>
+        </div>
+        {% endif %}
+
+        {% if plot_url %}
+        <h3>Gráfico de la Distribución Hipergeométrica (N={{N}}, K={{K}}, n={{n}})</h3>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Gráfico de Poisson">
+        {% endif %}
+    </div>
+</body>
+</html>

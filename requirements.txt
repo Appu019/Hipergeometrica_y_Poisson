@@ -1,0 +1,7 @@
+fastapi[all]
+uvicorn
+matplotlib
+numpy
+jinja2
+python-multipart
+scipy
